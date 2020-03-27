@@ -1,7 +1,7 @@
 import React from 'react';
 
 let style = {
-  maxWidth: '700px'
+  padding: 0
 };
 
 let btn = {
@@ -9,9 +9,9 @@ let btn = {
 };
 
 const List = (props) => (
-  <ul className="siimple-list">
+  <ul className="siimple-list" style={style}>
     {props.todos.map((todo, i)=>{
-      return <li key={i} className="siimple-list-item siimple--bg-white" style={style}>{todo.title} <span className="siimple-tag siimple-tag--error siimple-hover" style={btn} onClick={() => props.handleRemove(i)}>Delete</span></li>
+      return <li key={i} className="siimple-list-item siimple--bg-white">{todo.title} <span className="siimple-tag siimple-tag--error siimple-hover" style={btn} onClick={() => props.handleRemove(i)}>Delete</span></li>
     })}
   </ul>
 );

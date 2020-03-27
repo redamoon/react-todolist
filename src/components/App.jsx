@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Form from './Form'
-import List from './List'
+import Header from './Header'
+import Form from './Form';
+import List from './List';
 
 export default class App extends Component {
   constructor(props) {
@@ -25,8 +26,8 @@ export default class App extends Component {
   }
   render() {
     return(
-      <div className="siimple-box siimple--bg-dark">
-        <h1 className="siimple-box-title siimple--color-white">React Todo App</h1>
+      <div className="siimple-jumbotron siimple-jumbotron--extra-large siimple-jumbotron--dark">
+        <Header />
         <Form handleAdd={this.handleAdd} />
         <div className="siimple-rule"> </div>
         <List todos={this.state.todo} handleRemove={this.handleRemove} />
