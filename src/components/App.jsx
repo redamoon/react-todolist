@@ -13,6 +13,9 @@ export default class App extends Component {
   handleAdd(e) {
     console.log(e.target.title.value);
     e.preventDefault();
+    this.state.todo.push({title: e.target.title.value});
+    this.setState({todo: this.state.todo});
+    e.target.title.value = '';
   }
   render() {
     return(
@@ -20,7 +23,7 @@ export default class App extends Component {
         <h1 className="siimple-box-title siimple--color-white">React Todo App</h1>
         <Form handleAdd={this.handleAdd} />
         <div className="siimple-rule"> </div>
-        <List />
+        <List todos={this.state.todo} />
       </div>
     )
   }
