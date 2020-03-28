@@ -45,10 +45,10 @@ export default class App extends Component {
         <Header />
         <Form handleAdd={this.handleAdd} />
         <div className="siimple-rule"> </div>
-        <h2>Todo</h2>
+        <h2>Todo：{this.state.todo.length}</h2>
         <List todos={this.state.todo} handleRemove={this.handleRemove} handleComplete={this.handleComplete} />
         <div className="siimple-rule"> </div>
-        <h2>完了</h2>
+        <h2>完了：{this.state.complete.length}</h2>
         <CompleteList complete={this.state.complete} handleCompleteRemove={this.handleCompleteRemove} />
       </div>
     )
